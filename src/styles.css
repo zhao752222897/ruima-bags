@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors */
+  --primary: #FF6A00;
+  --primary-600: #C24A00;
+  --primary-700: #A63F00;
+  --primary-ink: #B03A00;
+  --secondary: #17304A;
+  --tertiary: #0066CC;
+  
+  --surface: #FFFFFF;
+  --surface-muted: #F4F4F4;
+  --surface-tint: #F1F4F9;
+  
+  --on-surface: #222222;
+  --body: #333333;
+  --muted: #666666;
+  --faint: #767676;
+  
+  --border: #DAE2ED;
+  --border-strong: #DDDDDD;
+  
+  /* Spacing & Layout */
+  --container-width: 1200px;
+  --nav-height: 44px;
+  --sign-height: 280px;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-[#333333] font-sans antialiased;
+    font-family: Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto px-4 lg:px-0;
+    max-width: var(--container-width);
+  }
+  
+  .btn-primary {
+    @apply bg-[var(--primary-600)] text-white font-medium rounded-full px-7 py-2.5 transition-colors duration-300;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-[var(--primary-700)];
+  }
+
+  .nav-item {
+    @apply flex items-center px-4 h-full text-white text-sm hover:bg-[var(--primary-700)] transition-colors;
+  }
+  
+  .product-card {
+    @apply bg-white p-[18px] transition-all duration-200 border border-transparent;
+  }
+  
+  .product-card:hover {
+    @apply border-[var(--border-strong)];
+  }
+
+  .scrim-navy {
+    background-color: rgba(51, 51, 51, 0.2);
+  }
+
+  .scrim-black {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}

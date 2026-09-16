@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "siteId": "s77gcbzbwsepkej9",
+  "name": "ruima-bags",
+  "kind": "react-vite",
+  "devCommand": "vite",
+  "buildCommand": "vite build",
+  "outputDir": "dist",
+  "entry": "index.html",
+  "createdBy": "accio-site-builder",
+  "createdAt": "2026-09-16T01:12:05.387Z",
+  "siteIdSyncStatus": "synced",
+  "installedAt": "2026-09-16T03:10:26.867Z",
+  "databaseUrl": ""
+}
