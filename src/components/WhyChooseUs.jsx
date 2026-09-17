@@ -74,7 +74,7 @@ export const CompanyProfile = () => {
             icon: <Mail size={24} />, 
             label: "INQUIRY", 
             color: "bg-white text-[var(--secondary)] hover:bg-[var(--surface-tint)]",
-            onClick: () => window.location.href = "mailto:zhao752222897@163.com"
+            onClick: () => {}
           },
           { 
             icon: <WhatsAppIcon size={24} />, 

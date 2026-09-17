@@ -45,7 +45,7 @@ export const ProductionProcess = () => {
             FROM CONCEPT TO COMPLETION
           </h2>
           <p className="text-[var(--muted)] text-sm mt-6 max-w-2xl mx-auto">
-            At Ruima, we are pursuing precise manufacturing standards, allowing us to ensure the best design requirements and durability for our global clients.
+            At Shanxi Ruima, we are pursuing precise manufacturing standards, allowing us to ensure the best design requirements and durability for our global clients.
           </p>
         </div>
 
