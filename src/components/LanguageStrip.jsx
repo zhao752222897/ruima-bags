@@ -1,18 +1,18 @@
 import React from 'react';
 
 const LANGS = [
-  { flag: 'us', name: 'English',    code: 'US' },
-  { flag: 'ca', name: 'English',    code: 'CA' },
-  { flag: 'gb', name: 'English',    code: 'GB' },
-  { flag: 'de', name: 'Deutsch',    code: 'DE' },
-  { flag: 'fr', name: 'Français',   code: 'FR' },
-  { flag: 'it', name: 'Italiano',   code: 'IT' },
-  { flag: 'jp', name: '日本語',      code: 'JP' },
-  { flag: 'kr', name: '한국어',      code: 'KR' },
-  { flag: 'br', name: 'Português',  code: 'BR' },
-  { flag: 'au', name: 'English',    code: 'AU' },
-  { flag: 'be', name: 'Français',   code: 'BE' },
-  { flag: 'at', name: 'Deutsch',    code: 'AT' },
+  { flag: 'https://flagcdn.com/w80/us.png', name: 'English',    code: 'US' },
+  { flag: 'https://flagcdn.com/w80/es.png', name: 'Español',    code: 'ES' },
+  { flag: 'https://flagcdn.com/w80/gb.png', name: 'English',    code: 'GB' },
+  { flag: 'https://flagcdn.com/w80/de.png', name: 'Deutsch',    code: 'DE' },
+  { flag: 'https://flagcdn.com/w80/fr.png', name: 'Français',   code: 'FR' },
+  { flag: 'https://flagcdn.com/w80/it.png', name: 'Italiano',   code: 'IT' },
+  { flag: 'https://flagcdn.com/w80/jp.png', name: '日本語',      code: 'JP' },
+  { flag: 'https://flagcdn.com/w80/ru.png', name: 'Русский',    code: 'RU' },
+  { flag: 'https://flagcdn.com/w80/ae.png', name: 'العربية',    code: 'AE' },
+  { flag: 'https://flagcdn.com/w80/br.png', name: 'Português',  code: 'BR' },
+  { flag: 'https://flagcdn.com/w80/kr.png', name: '한국어',      code: 'KR' },
+  { flag: 'https://flagcdn.com/w80/au.png', name: 'English',    code: 'AU' },
 ];
 
 export const LanguageStrip = () => {
@@ -26,9 +26,9 @@ export const LanguageStrip = () => {
         <div className="flex-1 flex justify-between items-center gap-4 py-2" style={{ overflow: 'visible' }}>
           {LANGS.map(({ flag, name, code }, idx) => (
             <div key={`${code}-${idx}`} className="group relative flex flex-col items-center gap-2 cursor-pointer min-w-[55px] transition-all duration-300 hover:-translate-y-2 hover:z-50">
-              <i className={`flag-icon-wrapper f-${flag} group-hover:scale-150 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.8)]`}>
-                <b></b>
-              </i>
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white/10 group-hover:scale-150 group-hover:border-[var(--primary-bright)] group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.8)] transition-all duration-300">
+                <img src={flag} alt={code} className="w-full h-full object-cover" />
+              </div>
               <span className="text-[10px] font-bold text-white opacity-60 group-hover:opacity-100 transition-opacity whitespace-nowrap drop-shadow-sm">{name}</span>
               <small className="text-[8px] font-black text-[var(--primary-bright)] tracking-widest opacity-80 uppercase">{code}</small>
             </div>
