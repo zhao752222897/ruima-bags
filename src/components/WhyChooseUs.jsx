@@ -102,15 +102,14 @@ export const CompanyProfile = () => {
             <h3 className="text-xl font-black text-[var(--secondary)] mb-2 uppercase tracking-tight">Contact via WhatsApp</h3>
             <p className="text-xs text-gray-500 mb-8 font-medium px-4">Scan the QR code below to start a direct conversation with our export team.</p>
             
-            {/* QR Code Placeholder */}
-            <div className="aspect-square bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl flex items-center justify-center relative group overflow-hidden">
-               <div className="text-center p-6">
-                 <div className="text-[var(--muted)] text-[10px] font-bold uppercase tracking-widest leading-relaxed">
-                   QR CODE<br/>PLACEHOLDER
-                 </div>
-                 <p className="text-[9px] text-gray-400 mt-2">Send me your QR code image to replace this.</p>
-               </div>
-               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            {/* REAL WHATSAPP QR CODE */}
+            <div className="aspect-square bg-white border border-gray-100 rounded-2xl flex items-center justify-center relative group overflow-hidden shadow-inner">
+               <img 
+                 src="https://sc04.alicdn.com/kf/A8eee21827e8b42db9639a5317c5ecc52k.jpg" 
+                 alt="WhatsApp QR" 
+                 className="w-full h-full object-contain p-4"
+               />
+               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </div>
             
             <div className="mt-8 pt-6 border-t border-gray-100">
