@@ -1,255 +1,61 @@
 import React from 'react';
-import { Search, ChevronRight, CheckCircle2, MessageSquare, PhoneCall, Globe, Verified } from 'lucide-react';
+import { StoreHeader } from './components/Header';
+import { Hero } from './components/Hero';
+import { LanguageStrip } from './components/LanguageStrip';
+import { CustomizationService } from './components/CustomizationService';
+import { ProductionProcess } from './components/ProductionProcess';
+import { FactoryTour, CategorySection } from './components/ProductSection';
+import { CompanyProfile, Footer } from './components/WhyChooseUs';
 
-const Navbar = () => (
-  <nav className="bg-[var(--primary-600)] h-[var(--nav-height)]">
-    <div className="container-custom h-full flex items-center justify-between">
-      <div className="flex h-full">
-        <a href="/" className="nav-item bg-[var(--primary-700)]">HOME</a>
-        <a href="#" className="nav-item">PRODUCTS</a>
-        <a href="#" className="nav-item">COMPANY PROFILE</a>
-        <a href="#" className="nav-item">CONTACT US</a>
-      </div>
-      <div className="flex items-center gap-2">
-        <div className="relative">
-          <input 
-            type="text" 
-            placeholder="Search in this store" 
-            className="rounded-full bg-white px-4 py-1 text-sm w-48 focus:outline-none border-none"
-          />
-        </div>
-        <button className="bg-[var(--primary-600)] p-1.5 rounded-full text-white hover:bg-[var(--primary-700)] transition-colors">
-          <Search size={16} />
-        </button>
-      </div>
-    </div>
-  </nav>
-);
+const luggageProducts = [
+  { title: "New Large Capacity Neoprene Suitcase Lightweight Travel Gear", price: "64.61", moq: 20, image: "https://sc04.alicdn.com/kf/H883cee398d114d9aa25e44e2fe2daf392.png", material: "Premium Neoprene Composite", specs: "20\"/22\"/24\"/26\"/28\"/32\"", colors: "Rose Pink, Slate Blue, Dark Grey, Deep Green" },
+  { title: "Simple PC ABS Spinner Suitcase With TSA Approved Lock", price: "79.61", moq: 50, image: "https://sc04.alicdn.com/kf/He4307526616f49108a45124f652ca19dI.png", material: "High-Impact PC + ABS Shell", specs: "Standard 20\"/24\"/28\" Trio", colors: "Oatmeal, Matcha Green, Desert Green, Black" },
+  { title: "Waterproof Business Travel Luggage With USB Charging Port", price: "68.39", moq: 30, image: "https://sc04.alicdn.com/kf/H631bf3adf154467c8014e731b1baf49cU.png", material: "Waterproof Reinforced Polymer", specs: "20\" (4.2kg) / 24\" (5.1kg)", colors: "White/Orange, White/Black, Tech Blue" },
+  { title: "Best Selling Forward Opening Business Suitcase Front Compartment", price: "55.95", moq: 10, image: "https://sc04.alicdn.com/kf/H9629d0ebb7ad4213a29094344d5968d1P.png", material: "Scratch-Resistant ABS", specs: "20\" (Front-Open) / 24\" / 27\"", colors: "Silver, Dark Night, Polar White, Moss Green" },
+  { title: "Breathable Neoprene Carry On Luggage Small Spinner", price: "57.38", moq: 20, image: "https://sc04.alicdn.com/kf/H8bd2b5df03984a0e95a9a93cef5cc5e0p.png", material: "Breathable Soft-Shell Neoprene", specs: "13\" (Storage) / 20\" / 24\" / 28\"", colors: "Sakura Pink, Sky Blue, Khaki, Nebula Grey" },
+  { title: "Modern Design Hard Shell Travel Luggage - Lightweight Series", price: "48.46", moq: 100, image: "https://sc04.alicdn.com/kf/H1cac6e1d3bad487e840fa2ffed9dc0f4M.png", material: "Ultra-Light ABS Alloy", specs: "20\"/24\"/28\" Full Set", colors: "Rose Gold, Lake Blue, Peacock Green, Grey" },
+  { title: "Customizable Pastel Color Trolley Case Set - OEM Service", price: "35.76", moq: 200, image: "https://sc04.alicdn.com/kf/Hdb5f486565254bacb8eacd59dbd6b4fbe.png", material: "Pastel Grade Virgin ABS", specs: "20\" / 22\" / 24\" / 26\"", colors: "Candy Pink, Mint, Lemon, Sky Blue" },
+  { title: "Premium Neoprene Business Travel Trolley Set - High End", price: "48.46", moq: 20, image: "https://sc04.alicdn.com/kf/Hdbc87340d5a1465096480bd5837d6917H.png", material: "Double-Layer Neoprene Fabric", specs: "20\" (International Carry-on)", colors: "Executive Black, Light Grey, Earth Gold" }
+];
 
-const Header = () => (
-  <header className="bg-[var(--secondary)]">
-    <div className="container-custom relative h-[var(--sign-height)] flex flex-col justify-between">
-      {/* Top Trust Scrim */}
-      <div className="w-full h-[45px] scrim-navy absolute top-0 left-0 px-5 flex items-center gap-3">
-        <div className="bg-[#F5F5F5] rounded-[16px] px-2 py-0.5 text-[12px] font-bold text-[#333]">1 YR</div>
-        <div className="flex items-center gap-1.5">
-          <Globe size={16} className="text-[var(--tertiary)]" />
-          <Verified size={16} className="text-[var(--tertiary)]" />
-        </div>
-        <h1 className="text-white text-sm font-medium ml-2.5 flex items-center gap-1">
-          Shanxi Ruima Trading Co., Ltd.
-          <ChevronRight size={14} />
-        </h1>
-      </div>
-      
-      {/* Main Brand Area */}
-      <div className="flex-1 flex items-center px-10">
-        <div className="text-white text-4xl font-bold tracking-tight">RUIMA BAGS</div>
-      </div>
-    </div>
-    <Navbar />
-  </header>
-);
+const backpackProducts = [
+  { title: "Timeless Collegiate Plaid Bag - Durable Nylon School Design", price: "7.69", moq: 200, image: "https://s.alicdn.com/@sc04/kf/H68cb2b47de654d55bf5f042e3a26f7778/-.png", material: "Collegiate Grade Plaid Nylon", specs: "Reinforced Base / Laptop Sleeve", colors: "Classic Brown, Heritage Navy" },
+  { title: "Fashion Minimalist Laptop Backpack With Anti-theft Pocket", price: "5.23", moq: 500, image: "https://s.alicdn.com/@sc04/kf/Hf1854c9d1fc64a86858d65f162efc2abi/-.png", material: "Anti-Slash Security Polyester", specs: "Hidden Rear Security Compartment", colors: "Security Grey, Stealth Black, Red" },
+  { title: "Custom Logo Waterproof Nylon Backpack With Drawstring Closure", price: "12.15", moq: 50, image: "https://s.alicdn.com/@sc04/kf/Hab97c2351bdb436896eb584d23da80d9J/-.png", material: "Waterproof Microfiber Nylon", specs: "Custom Logo Support / Drawstring", colors: "Light Grey, Tactical Black" },
+  { title: "Lightweight Denim-style Schoolbag For Gym Cycling & Getaway", price: "9.53", moq: 100, image: "https://s.alicdn.com/@sc04/kf/H98b75e3ee01645a1961270a265c45a21R/-.png", material: "Faux-Denim Durable Canvas", specs: "Multi-Pocket Quick-Access Design", colors: "Lavender, Deep Purple, Forest" },
+  { title: "Vintage Pu Leather Backpack With Cute Dachshund Charm", price: "11.23", moq: 50, image: "https://s.alicdn.com/@sc04/kf/Hd7cefff3c40a4762bc5f4d4aec836aceY/-PU-.png", material: "Hand-Washed Vintage PU Leather", specs: "Retro Buckle / 15\" Laptop Capable", colors: "Cognac Brown, Espresso, Black" },
+  { title: "Fashionable Business Student Backpack For Office Getaway", price: "4.55", moq: 100, image: "https://s.alicdn.com/@sc04/kf/Hfbff377b3bdc4cea973c2d32af842f96v/-.jpg", material: "Grade Water-resistant Fabric", specs: "Adjustable Straps / 20L Capacity", colors: "Midnight Blue, Stealth Black" },
+  { title: "Wholesale Trendy School Backpack With Multi-pocket Design", price: "6.46", moq: 100, image: "https://s.alicdn.com/@sc04/kf/H4837c61497d744c7914e66d202b1b1abZ/-.png", material: "Polyester Oxford Hybrid", specs: "Spacious Multi-Compartment Layout", colors: "Classic Black, School Grey" },
+  { title: "Fashionable Oxford Cloth Shoulder Bag For Women", price: "7.53", moq: 100, image: "https://s.alicdn.com/@sc04/kf/Hdc1c5c24b2f84e38bce610362dd59bcfu/-.png", material: "Matte-Finish Oxford Cloth", specs: "Dual-Handle Utility Backpack", colors: "Stealth Black, Milk Tea Beige" }
+];
 
-const Hero = () => (
-  <section className="relative w-full h-[650px] overflow-hidden">
-    <div className="absolute inset-0 w-full h-full">
-      <img 
-        src="/assets/images/hero-1.png" 
-        alt="Luggage Factory Banner" 
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-black/20 flex items-center">
-        <div className="container-custom text-white">
-          <h2 className="text-5xl font-bold mb-4 drop-shadow-lg">Professional Luggage Solutions</h2>
-          <p className="text-xl max-w-2xl drop-shadow-md">Leading exporter of rolling suitcases, school backpacks, and casual travel gear. Quality guaranteed from factory to your doorstep.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const ProductCard = ({ title, image, price, moq, sold }) => (
-  <div className="product-card group cursor-pointer">
-    <div className="aspect-square bg-[#F7F7F7] mb-[13px] overflow-hidden">
-      <img 
-        src={image} 
-        alt={title} 
-        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" 
-      />
-    </div>
-    <h3 className="text-sm leading-[1.29] text-[var(--on-surface)] line-clamp-2 min-h-[36px] group-hover:text-[var(--primary-ink)] transition-colors mb-2">
-      {title}
-    </h3>
-    <div className="text-sm font-bold text-[#333] mb-1">{price}</div>
-    <div className="text-sm text-[var(--on-surface)] flex justify-between items-center">
-      <span>{moq}</span>
-      <span className="text-[var(--faint)] text-xs">{sold} sold</span>
-    </div>
-    <div className="mt-2 inline-block bg-white text-[var(--primary-ink)] text-[12px] rounded-[3px] px-2 py-0.5 border border-[var(--primary-ink)]">
-      Trade Assurance
-    </div>
-  </div>
-);
-
-const ProductGrid = () => (
-  <section className="py-10 bg-white">
-    <div className="container-custom">
-      <h2 className="text-[22px] font-medium text-[var(--primary-ink)] mb-5">Main Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <ProductCard 
-          title="Premium Hard Shell Rolling Suitcase - Durable Travel Spinner"
-          image="/assets/images/product-1.png"
-          price="US $45.00 - $65.00"
-          moq="10 pieces (MOQ)"
-          sold="1.2k+"
-        />
-        <ProductCard 
-          title="Ergonomic School Backpack with Laptop Compartment for Students"
-          image="/assets/images/product-2.png"
-          price="US $8.50 - $12.00"
-          moq="50 pieces (MOQ)"
-          sold="3.5k+"
-        />
-        <ProductCard 
-          title="Water-resistant Casual Crossbody Bag - Stylish Travel Companion"
-          image="/assets/images/product-3.png"
-          price="US $5.20 - $7.80"
-          moq="100 pieces (MOQ)"
-          sold="800+"
-        />
-        <ProductCard 
-          title="All-in-one Travel Gear Collection - Quality Backpacks & Cases"
-          image="/assets/images/product-1.png"
-          price="US $15.00 - $35.00"
-          moq="20 pieces (MOQ)"
-          sold="500+"
-        />
-      </div>
-    </div>
-  </section>
-);
-
-const CompanyProfile = () => (
-  <section className="py-10">
-    <div className="w-full h-[280px] relative overflow-hidden">
-      <img 
-        src="/assets/images/factory-view.png" 
-        alt="Factory" 
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 scrim-black flex items-center justify-center text-center px-4">
-        <div className="text-white">
-          <h2 className="text-2xl font-bold mb-4">Quality Manufacturing Since 2026</h2>
-          <div className="flex flex-wrap justify-center gap-4 text-xs font-bold">
-            <span className="bg-white/90 text-[var(--primary-ink)] rounded-[3px] px-4 py-2 uppercase">Advanced Production Lines</span>
-            <span className="bg-white/90 text-[var(--primary-ink)] rounded-[3px] px-4 py-2 uppercase">Strict QC Control</span>
-            <span className="bg-white/90 text-[var(--primary-ink)] rounded-[3px] px-4 py-2 uppercase">Global Logistics Support</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div className="container-custom py-10 bg-white text-center">
-      <h2 className="text-[22px] font-medium text-[var(--primary-600)] mb-8">Verified Capabilities</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div className="flex items-start text-left gap-4">
-          <div className="w-[60px] h-[60px] rounded-full border border-[var(--border)] flex items-center justify-center shrink-0">
-            <CheckCircle2 size={32} className="text-[var(--primary-600)]" />
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--on-surface)]">Production Capacity</div>
-            <div className="text-sm text-[var(--primary-ink)]">50,000+ Units / Month</div>
-          </div>
-        </div>
-        <div className="flex items-start text-left gap-4">
-          <div className="w-[60px] h-[60px] rounded-full border border-[var(--border)] flex items-center justify-center shrink-0">
-            <Globe size={32} className="text-[var(--primary-600)]" />
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--on-surface)]">Export Markets</div>
-            <div className="text-sm text-[var(--primary-ink)]">North America, Europe, SE Asia</div>
-          </div>
-        </div>
-        <div className="flex items-start text-left gap-4">
-          <div className="w-[60px] h-[60px] rounded-full border border-[var(--border)] flex items-center justify-center shrink-0">
-            <Verified size={32} className="text-[var(--primary-600)]" />
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--on-surface)]">Quality Standard</div>
-            <div className="text-sm text-[var(--primary-ink)]">ISO 9001 Certified Factory</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const Footer = () => (
-  <footer className="bg-white border-t border-[var(--border)]">
-    <div className="container-custom py-10">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
-        <div className="col-span-2">
-          <div className="text-2xl font-bold text-[var(--secondary)] mb-6">RUIMA BAGS</div>
-          <p className="text-sm text-[var(--body)] mb-6 max-w-xs">Professional manufacturer and exporter of premium travel gear and backpacks for global markets.</p>
-        </div>
-        <div>
-          <h4 className="text-sm font-bold text-[var(--on-surface)] mb-5">Product Categories</h4>
-          <ul className="space-y-3 text-sm text-[var(--body)]">
-            <li><a href="#" className="hover:text-[var(--tertiary)]">Rolling Suitcases</a></li>
-            <li><a href="#" className="hover:text-[var(--tertiary)]">School Backpacks</a></li>
-            <li><a href="#" className="hover:text-[var(--tertiary)]">Casual Bags</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-bold text-[var(--on-surface)] mb-5">Customer Service</h4>
-          <ul className="space-y-3 text-sm text-[var(--body)]">
-            <li><a href="#" className="hover:text-[var(--tertiary)]">Contact Us</a></li>
-            <li><a href="#" className="hover:text-[var(--tertiary)]">Inquiry History</a></li>
-            <li><a href="#" className="hover:text-[var(--tertiary)]">Ordering Guide</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-bold text-[var(--on-surface)] mb-5">Legal Info</h4>
-          <ul className="space-y-3 text-sm text-[var(--body)]">
-            <li><a href="#" className="hover:text-[var(--tertiary)]">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-[var(--tertiary)]">Terms of Use</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div className="bg-[var(--surface-muted)] text-[var(--muted)] text-xs py-10">
-      <div className="container-custom flex flex-col md:flex-row justify-between items-center gap-4">
-        <div>© 2026 Shanxi Ruima Trading Co., Ltd. All Rights Reserved.</div>
-        <div className="flex gap-4">
-          <a href="#" className="hover:underline">Alibaba.com</a>
-          <a href="#" className="hover:underline">Trade Assurance</a>
-        </div>
-      </div>
-    </div>
-    
-    {/* Floating Contact Rail */}
-    <div className="fixed right-4 top-[300px] z-50 flex flex-col gap-2">
-      <div className="w-[68px] bg-white rounded-[4px] shadow-lg flex flex-col items-center py-4 cursor-pointer hover:bg-[var(--surface-tint)] transition-colors border border-[var(--border)]">
-        <MessageSquare className="text-[var(--primary)] mb-1" size={24} />
-        <span className="text-[10px] font-bold">CHAT</span>
-      </div>
-      <div className="w-[68px] bg-white rounded-[4px] shadow-lg flex flex-col items-center py-4 cursor-pointer hover:bg-[var(--surface-tint)] transition-colors border border-[var(--border)]">
-        <PhoneCall className="text-[var(--primary)] mb-1" size={24} />
-        <span className="text-[10px] font-bold">CONTACT</span>
-      </div>
-    </div>
-  </footer>
-);
+const casualProducts = [
+  { title: "Breathable Lightweight Drawstring Bucket Bag For Women Men", price: "6.31", moq: 50, image: "https://s.alicdn.com/@sc04/kf/H904c56c91a61441fae348af4e58255106/-.png", material: "Air-Permeable Technical Mesh", specs: "Drawstring Bucket / Urban Sporty", colors: "Black, Royal Blue, Forest Green" },
+  { title: "Versatile Waist Pack Lightweight Fitness Gym Bag", price: "7.69", moq: 50, image: "https://s.alicdn.com/@sc04/kf/Hc179d6b896754db2b2ad5fd007d596eeh/-.png", material: "Anti-Scratch Sports Nylon", specs: "Adjustable Sling / Phone Pocket", colors: "Charcoal, Sky Blue, Khaki" },
+  { title: "Trendy Contrast Color Crossbody Bag Nylon Chest Pack", price: "9.23", moq: 100, image: "https://s.alicdn.com/@sc04/kf/Hc85e7350951a460bb443acefed2615da6/-.png", material: "Contrast Panel Nylon", specs: "High-Visibility Urban Sling", colors: "Black/Orange, Green/Grey" },
+  { title: "Men's Japanese Workwear Nylon Crossbody Messenger Bag", price: "8.75", moq: 50, image: "https://s.alicdn.com/@sc04/kf/Hffac821b74324304b15a36db27482162o/-.png", material: "Heavy-Duty Workwear Nylon", specs: "Braided Rope Strap / Tactical", colors: "Field Green, Coyote Khaki, Black" },
+  { title: "Men's Waterproof Nylon Chest Bag Streetwear Sling Pack", price: "11.38", moq: 20, image: "https://s.alicdn.com/@sc04/kf/He7badfb52bf646d3889d96f273429dc3c/-.jpg", material: "Waterproof Motorcycle Nylon", specs: "Ergonomic Cross-Body Harness", colors: "Iron Grey, Carbon Black" },
+  { title: "Tie-dye Nylon Chest Bag With Cute Panda Charm", price: "6.46", moq: 50, image: "https://s.alicdn.com/@sc04/kf/H984b310e99e1491f8b20d5cf33924e9c0/-.png", material: "Tie-Dye Graphic Nylon", specs: "Mini-Sling / Sporty Aesthetic", colors: "Galaxy Blue, Aurora Purple" },
+  { title: "Japanese Style Nylon Chest Bag Cute Waist Bag Fresh Niche", price: "6.92", moq: 30, image: "https://s.alicdn.com/@sc04/kf/Ha9d59182d39445bd8b8763c85ae98f6fS/-.png", material: "Soft-Touch Peach Skin Fabric", specs: "Niche Casual Crossbody Design", colors: "Sakura Pink, Matcha Green, Black" },
+  { title: "Japanese Style Plaid Sling Bag Kawaii Crossbody Messenger", price: "12.50", moq: 50, image: "https://s.alicdn.com/@sc04/kf/Hd343b570c24a4eb794201416f632878d4/-.jpg", material: "Vintage Plaid Cotton Canvas", specs: "Kawaii Accessory Integration", colors: "Primary Yellow, Classic Blue" }
+];
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#F4F4F4]">
-      <Header />
-      <main>
+    <div className="min-h-screen overflow-x-hidden bg-[#F4F4F4]">
+      <StoreHeader />
+      <main className="flex flex-col">
         <Hero />
-        <ProductGrid />
-        <CompanyProfile />
+        <LanguageStrip />
+        <FactoryTour />
+        <CustomizationService />
+        <ProductionProcess />
+        <div className="flex flex-col gap-[20px] mt-[20px]">
+          <CategorySection title="Hard & Soft Luggage" products={luggageProducts} />
+          <CategorySection title="Student Backpacks" products={backpackProducts} />
+          <CategorySection title="Casual & Crossbody Bags" products={casualProducts} />
+          <CompanyProfile />
+        </div>
       </main>
       <Footer />
     </div>

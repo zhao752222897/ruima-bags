@@ -1,59 +1,49 @@
 import React from 'react';
-import { Search } from 'lucide-react';
+import { Search, ChevronDown, Globe, Verified, Star, Clock, MapPin, Award, CheckCircle2, MessageSquare, PhoneCall, ChevronRight } from 'lucide-react';
 
-const Header = () => {
-  return (
-    <header className="w-full">
-      {/* Brand Bar */}
-      <div className="bg-gradient-to-r from-rm-navy-900 to-rm-navy-700 text-white py-6 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
-          <div className="flex items-center space-x-6">
-            <div className="text-4xl font-bold italic tracking-tighter flex items-center">
-              <span className="text-rm-orange-500">RM</span>
-            </div>
-            <div className="hidden md:block border-l border-white/20 pl-6">
-              <h1 className="text-xl font-bold tracking-widest uppercase">
-                LUGGAGE | STUDENT BACKPACKS | CASUAL BAGS
-              </h1>
-              <p className="text-xs text-white/60 mt-1 uppercase tracking-tighter">
-                Professional Bag Manufacturer Since 2013
-              </p>
+export const StoreHeader = () => (
+  <header className="w-full flex flex-col items-center">
+    {/* Main Sign Area - High-fidelity banner image from User (Image 2) */}
+    <div className="relative w-full h-[400px] overflow-hidden bg-[#0A192F]">
+      <img 
+        src="https://sc02.alicdn.com/kf/H249babd85e0341a7b2be8ab4ccded49eO.jpg" 
+        className="w-full h-full object-cover object-center" 
+        alt="Ruima Bags Correct Banner" 
+      />
+      
+      {/* Top Identity Bar (Floating on top) */}
+      <div className="absolute top-0 left-0 w-full h-[50px] z-20 px-12 flex items-center gap-3 text-white/90 bg-gradient-to-b from-black/50 to-transparent">
+        <div className="bg-white/20 backdrop-blur-md rounded-lg px-3 py-1 text-[11px] font-bold border border-white/10 uppercase tracking-widest">
+          13 YRS GOLD
+        </div>
+        <Globe size={14} className="text-[#007FFC]" />
+        <Verified size={14} className="text-[#007FFC]" />
+      </div>
+    </div>
+
+    {/* Full-width Trade Bar (Navigation) */}
+    <nav className="w-full bg-[var(--primary-bright)] h-[48px] flex justify-center shadow-lg border-b border-white/10 z-30">
+      <div className="w-[1200px] h-full flex items-center justify-between px-4">
+        <div className="flex h-full">
+          <div className="nav-item-block nav-item-selected uppercase text-xs font-black tracking-widest px-8">Home</div>
+          <div className="nav-item-block group relative uppercase text-xs font-bold tracking-widest px-8">
+            Products <ChevronDown size={12} className="ml-2" />
+            <div className="hidden group-hover:block absolute top-[48px] left-0 w-[240px] bg-white shadow-xl z-50 text-[var(--body)] py-2 border-t-2 border-[var(--primary)]">
+              {['Hard & Soft Luggage', 'Student Backpacks', 'Casual & Crossbody Bags', 'Sports & Gym Bags', 'Shoulder Bags', 'Pet Bags'].map(cat => (
+                <div key={cat} className="h-10 flex items-center px-4 hover:bg-[#F5F5F5] text-sm cursor-pointer capitalize">{cat}</div>
+              ))}
             </div>
           </div>
-          <div className="mt-4 md:mt-0 hidden lg:block">
-            {/* Placeholder for header images if needed */}
-            <div className="flex space-x-2">
-              <div className="w-20 h-20 bg-white/5 rounded"></div>
-              <div className="w-20 h-20 bg-white/5 rounded"></div>
-              <div className="w-20 h-20 bg-white/5 rounded"></div>
-            </div>
-          </div>
+          <div className="nav-item-block uppercase text-xs font-bold tracking-widest px-8 opacity-80 hover:opacity-100 transition-opacity">Company Profile</div>
+          <div className="nav-item-block uppercase text-xs font-bold tracking-widest px-8 opacity-80 hover:opacity-100 transition-opacity">Contact Us</div>
+        </div>
+
+        {/* Search Bar */}
+        <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full h-[32px] w-[280px] px-4 border border-white/20">
+          <input type="text" placeholder="SEARCH PRODUCTS..." className="bg-transparent border-none outline-none text-[10px] font-bold text-white placeholder:text-white/50 w-full" />
+          <button className="text-white ml-2 hover:scale-110 transition-transform"><Search size={14} /></button>
         </div>
       </div>
-
-      {/* Navigation Bar */}
-      <nav className="bg-rm-orange-500 text-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-          <ul className="flex space-x-8 py-3 text-sm font-semibold">
-            <li className="hover:text-white/80 cursor-pointer border-b-2 border-white pb-0.5">Home</li>
-            <li className="hover:text-white/80 cursor-pointer pb-0.5">Products</li>
-            <li className="hover:text-white/80 cursor-pointer pb-0.5">Company profile</li>
-          </ul>
-          
-          <div className="py-2 w-full md:w-auto">
-            <div className="relative flex items-center bg-white rounded-sm px-2 py-1 w-full md:w-64">
-              <input 
-                type="text" 
-                placeholder="Search in this store" 
-                className="bg-transparent border-none outline-none text-rm-text-333 text-xs w-full px-2"
-              />
-              <Search size={14} className="text-rm-text-666 cursor-pointer" />
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-  );
-};
-
-export default Header;
+    </nav>
+  </header>
+);

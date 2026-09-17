@@ -1,0 +1,212 @@
+[2m09:12:53[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:103:5: The `rounded-inherit` class does not exist. If `rounded-inherit` is a custom class, make sure it is defined within a `@layer` directive.[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:103:4
+[33m  101|  
+  102|    .market-flag b {
+  103|      @apply absolute inset-0 z-10 block rounded-inherit;
+     |      ^
+  104|      background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.6) 46%, transparent 66%);
+  105|      transform: translateX(-135%);[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at AtRule.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\node.js:145:32)
+      at processApply (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:261:11)
+      at async compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:21)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m09:13:06[22m [31m[1m[vite][22m[39m Pre-transform error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:103:5: The `rounded-inherit` class does not exist. If `rounded-inherit` is a custom class, make sure it is defined within a `@layer` directive.
+[2m09:13:06[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:103:5: The `rounded-inherit` class does not exist. If `rounded-inherit` is a custom class, make sure it is defined within a `@layer` directive.[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:103:4
+[33m  101|  
+  102|    .market-flag b {
+  103|      @apply absolute inset-0 z-10 block rounded-inherit;
+     |      ^
+  104|      background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.6) 46%, transparent 66%);
+  105|      transform: translateX(-135%);[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at AtRule.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\node.js:145:32)
+      at processApply (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:261:11)
+      at async compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:21)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m09:13:38[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:103:5: The `rounded-inherit` class does not exist. If `rounded-inherit` is a custom class, make sure it is defined within a `@layer` directive.[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:103:4
+[33m  101|  
+  102|    .market-flag b {
+  103|      @apply absolute inset-0 z-10 block rounded-inherit;
+     |      ^
+  104|      background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.6) 46%, transparent 66%);
+  105|      transform: translateX(-135%);[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at AtRule.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\node.js:145:32)
+      at processApply (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:261:11)
+      at async compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:21)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m09:14:38[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:103:5: The `rounded-inherit` class does not exist. If `rounded-inherit` is a custom class, make sure it is defined within a `@layer` directive.[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:103:4
+[33m  101|  
+  102|    .market-flag b {
+  103|      @apply absolute inset-0 z-10 block rounded-inherit;
+     |      ^
+  104|      background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.6) 46%, transparent 66%);
+  105|      transform: translateX(-135%);[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at AtRule.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\node.js:145:32)
+      at processApply (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:261:11)
+      at async compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:21)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m09:14:44[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:103:5: The `rounded-inherit` class does not exist. If `rounded-inherit` is a custom class, make sure it is defined within a `@layer` directive.[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:103:4
+[33m  101|  
+  102|    .market-flag b {
+  103|      @apply absolute inset-0 z-10 block rounded-inherit;
+     |      ^
+  104|      background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.6) 46%, transparent 66%);
+  105|      transform: translateX(-135%);[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at AtRule.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\node.js:145:32)
+      at processApply (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+      at D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+      at async plugins (D:\accio work test6\建站\ruima-bags\node_modules\tailwindcss\lib\plugin.js:38:17)
+      at async LazyResult.runAsync (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:261:11)
+      at async compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:21)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m10:40:01[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:102:1: Unexpected }[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:102:0
+[33m  100|      animation: modal-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  101|    }
+  102|  }
+     |  ^
+  103|  
+  104|  .unit-manifest-bg {[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at Parser.unexpectedClose (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:585:22)
+      at Parser.end (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:330:12)
+      at Parser.parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:454:16)
+      at parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parse.js:11:12)
+      at new LazyResult (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:133:16)
+      at Processor.process (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\processor.js:53:14)
+      at compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:59)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m10:40:01[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:102:1: Unexpected }[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:102:0
+[33m  100|      animation: modal-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  101|    }
+  102|  }
+     |  ^
+  103|  
+  104|  .unit-manifest-bg {[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at Parser.unexpectedClose (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:585:22)
+      at Parser.end (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:330:12)
+      at Parser.parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:454:16)
+      at parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parse.js:11:12)
+      at new LazyResult (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:133:16)
+      at Processor.process (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\processor.js:53:14)
+      at compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:59)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m10:40:35[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:102:1: Unexpected }[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:102:0
+[33m  100|      animation: modal-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  101|    }
+  102|  }
+     |  ^
+  103|  
+  104|  .unit-manifest-bg {[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at Parser.unexpectedClose (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:585:22)
+      at Parser.end (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:330:12)
+      at Parser.parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:454:16)
+      at parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parse.js:11:12)
+      at new LazyResult (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:133:16)
+      at Processor.process (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\processor.js:53:14)
+      at compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:59)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m10:40:35[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:102:1: Unexpected }[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:102:0
+[33m  100|      animation: modal-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  101|    }
+  102|  }
+     |  ^
+  103|  
+  104|  .unit-manifest-bg {[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at Parser.unexpectedClose (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:585:22)
+      at Parser.end (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:330:12)
+      at Parser.parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:454:16)
+      at parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parse.js:11:12)
+      at new LazyResult (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:133:16)
+      at Processor.process (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\processor.js:53:14)
+      at compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:59)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)
+[2m10:41:03[22m [31m[1m[vite][22m[39m Pre-transform error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:102:1: Unexpected }
+[2m10:41:03[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] D:/accio work test6/建站/ruima-bags/src/styles.css:102:1: Unexpected }[39m
+  Plugin: [35mvite:css[39m
+  File: [36mD:/accio work test6/建站/ruima-bags/src/styles.css[39m:102:0
+[33m  100|      animation: modal-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  101|    }
+  102|  }
+     |  ^
+  103|  
+  104|  .unit-manifest-bg {[39m
+      at Input.error (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\input.js:106:16)
+      at Parser.unexpectedClose (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:585:22)
+      at Parser.end (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:330:12)
+      at Parser.parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parser.js:454:16)
+      at parse (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\parse.js:11:12)
+      at new LazyResult (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\lazy-result.js:133:16)
+      at Processor.process (D:\accio work test6\建站\ruima-bags\node_modules\postcss\lib\processor.js:53:14)
+      at compileCSS (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36897:59)
+      at async TransformPluginContext.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:36170:11)
+      at async PluginContainer.transform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:49096:18)
+      at async loadAndTransform (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:51929:27)
+      at async viteTransformMiddleware (file:///D:/accio%20work%20test6/%E5%BB%BA%E7%AB%99/ruima-bags/node_modules/vite/dist/node/chunks/dep-CB_7IfJ-.js:61881:24)

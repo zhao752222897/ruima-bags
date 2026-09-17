@@ -1,71 +1,67 @@
-import React from 'react';
-import { ShieldCheck, Clock, Shield, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 
-const Hero = () => {
+const banners = [
+  'https://sc02.alicdn.com/kf/H2f4d4cf213d3432496b45e6d4b226d4aI.jpg', // Banner 1
+  'https://sc02.alicdn.com/kf/H8d1d77e3aedc47ab808f1ea7b347dc65q.jpg', // Banner 2
+  'https://sc02.alicdn.com/kf/Hb48c347c138f47669f42255d24e49206m.jpg', // Banner 3
+  'https://sc02.alicdn.com/kf/H9b679c64591e4062867159d9ad8a160bu.jpg', // Banner 4
+  'https://sc02.alicdn.com/kf/H8cc4408921a64e69a5f92a54fd422d24W.jpg'  // Banner 5
+];
+
+export const Hero = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % banners.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative w-full bg-rm-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 py-12 lg:py-24 flex flex-col lg:flex-row items-center">
-        {/* Text Content */}
-        <div className="w-full lg:w-1/2 z-10">
-          <h2 className="text-rm-navy-800 text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-            Uncompromising <br /> for Your Bags
-          </h2>
-          <p className="text-rm-text-666 text-xl mb-8">
-            Eliminating risks and ensuring reliability.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="flex items-center space-x-3">
-              <ShieldCheck className="text-rm-orange-500 w-10 h-10 shrink-0" />
-              <span className="text-xs font-bold leading-tight uppercase">100% Quality Inspection</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Clock className="text-rm-orange-500 w-10 h-10 shrink-0" />
-              <span className="text-xs font-bold leading-tight uppercase">On-Time Delivery Guarantee</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Shield className="text-rm-orange-500 w-10 h-10 shrink-0" />
-              <span className="text-xs font-bold leading-tight uppercase">Safety & Assurance</span>
-            </div>
+    <section className="full-bleed-band relative overflow-hidden bg-[var(--secondary-deep)] aspect-[1920/650]">
+      {/* Carousel Track */}
+      <div 
+        className="flex transition-transform duration-700 ease-in-out h-full"
+        style={{ transform: `translateX(-${current * 100}%)` }}
+      >
+        {banners.map((src, idx) => (
+          <div key={idx} className="min-w-full h-full relative">
+            <img 
+              src={src} 
+              alt={`Slide ${idx + 1}`} 
+              className="w-full h-full object-fill"
+            />
           </div>
-
-          <div className="bg-white p-6 border-l-4 border-rm-orange-500 shadow-sm max-w-md">
-            <h3 className="text-rm-orange-500 font-bold mb-4 flex items-center">
-              Options <ChevronRight size={16} />
-            </h3>
-            <ul className="space-y-2 text-sm text-rm-text-666">
-              <li className="flex items-start">
-                <span className="w-1.5 h-1.5 bg-rm-orange-500 rounded-full mt-1.5 mr-3 shrink-0"></span>
-                Silver Stamping, embossing, etc.
-              </li>
-              <li className="flex items-start">
-                <span className="w-1.5 h-1.5 bg-rm-orange-500 rounded-full mt-1.5 mr-3 shrink-0"></span>
-                Glossy, Matte, Lychee Custom Embossing
-              </li>
-              <li className="flex items-start">
-                <span className="w-1.5 h-1.5 bg-rm-orange-500 rounded-full mt-1.5 mr-3 shrink-0"></span>
-                Color Card Selection
-              </li>
-              <li className="flex items-start">
-                <span className="w-1.5 h-1.5 bg-rm-orange-500 rounded-full mt-1.5 mr-3 shrink-0"></span>
-                Customizable Carton Color, Shipping Mark
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Visual Content Placeholder */}
-        <div className="w-full lg:w-1/2 mt-12 lg:mt-0 lg:pl-12 relative">
-          <div className="bg-rm-navy-900/5 aspect-square rounded-lg flex items-center justify-center border-2 border-dashed border-rm-line">
-            <p className="text-rm-text-666 text-sm">Main Product / Quality Inspection Photo Placeholder</p>
-          </div>
-          {/* Decorative elements */}
-          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-rm-orange-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute -top-6 -right-6 w-32 h-32 bg-rm-navy-800/10 rounded-full blur-3xl"></div>
-        </div>
+        ))}
       </div>
+
+      {/* Navigation Dots */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+        {banners.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrent(idx)}
+            className={`w-[25.6px] h-[25.6px] rounded-full border-2 border-white transition-all ${
+              current === idx ? 'bg-[var(--primary-bright)] scale-110' : 'bg-transparent'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Side Overlay (Optional, used for navigation hit areas) */}
+      <button 
+        onClick={() => setCurrent((prev) => (prev - 1 + banners.length) % banners.length)}
+        className="absolute left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-30"
+      >
+        <div className="bg-black/20 p-4 rounded-full">❮</div>
+      </button>
+      <button 
+        onClick={() => setCurrent((prev) => (prev + 1) % banners.length)}
+        className="absolute right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-30"
+      >
+        <div className="bg-black/20 p-4 rounded-full">❯</div>
+      </button>
     </section>
   );
 };
-
-export default Hero;
