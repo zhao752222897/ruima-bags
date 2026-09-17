@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Clock, Package, CreditCard, PieChart, ShieldCheck, MessageSquare, PhoneCall, X } from 'lucide-react';
+import { Globe, Clock, Package, CreditCard, PieChart, ShieldCheck, Mail, X } from 'lucide-react';
 
 const WhatsAppIcon = ({ size = 20, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -12,8 +12,8 @@ export const CompanyProfile = () => {
 
   return (
     <>
-      <section className="flex flex-col gap-[20px] mb-20">
-        {/* Full-width Image Showcase - PERFECTLY CENTERED & COMFORTABLE */}
+      <section className="flex flex-col gap-[30px] mb-20">
+        {/* Full-width Image Showcase - PERFECTLY CENTERED */}
         <div className="canvas-container relative h-[600px] overflow-hidden rounded-[40px] shadow-2xl bg-[#0A192F]">
           <img
             alt="Premium Branding Board"
@@ -22,66 +22,70 @@ export const CompanyProfile = () => {
           />
         </div>
 
-        {/* Digital Dashboard Profile */}
+        {/* Digital Dashboard Profile - Polished Card Layout */}
         <div className="canvas-container bg-white p-12 shadow-xl border border-gray-100 rounded-3xl">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
-              <span className="text-[var(--primary-bright)] text-[10px] font-black tracking-[0.3em] uppercase block mb-2">Enterprise Verification</span>
-              <h2 className="text-4xl font-black text-[var(--secondary)] tracking-tighter uppercase">Company Profile</h2>
+              <span className="text-[var(--primary-bright)] text-[11px] font-black tracking-[0.4em] uppercase block mb-2">Verified Manufacturing Excellence</span>
+              <h2 className="text-4xl font-black text-[var(--secondary)] tracking-tighter uppercase leading-none">Company Profile</h2>
             </div>
-            <div className="flex items-center gap-2 text-[var(--tertiary)] text-xs font-bold bg-[var(--surface-tint)] px-4 py-2 rounded-full cursor-pointer hover:bg-[var(--secondary)] hover:text-white transition-all">
+            <div className="flex items-center gap-2 text-[var(--tertiary)] text-[10px] font-black bg-[var(--surface-tint)] px-5 py-2.5 rounded-full cursor-pointer hover:bg-[var(--secondary)] hover:text-white transition-all uppercase tracking-widest">
               <ShieldCheck size={14} />
-              <span>Verification of supply capacity & production line &gt;</span>
+              <span>Full Production Line Audit &gt;</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gray-100 rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-gray-100 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/5">
             {[
-              { icon: <Globe size={24}/>, label: "Country / Region", val: "China (Mainland)" },
-              { icon: <Clock size={24}/>, label: "Year established", val: "2013" },
-              { icon: <PieChart size={24}/>, label: "Business Type", val: "Manufacturer, Trading Company" },
-              { icon: <Package size={24}/>, label: "Main Products", val: "Luggage, Backpacks, Casual Bags" },
-              { icon: <CreditCard size={24}/>, label: "Payment Types", val: "T/T, L/C, D/P, Credit Card" },
-              { icon: <ShieldCheck size={24}/>, label: "Main Markets", val: "North America, Europe, SE Asia" },
+              { icon: <Globe size={28}/>, label: "Country / Region", val: "Shanxi, China (Mainland)" },
+              { icon: <Clock size={28}/>, label: "Market Experience", val: "Professional Since 2013" },
+              { icon: <PieChart size={28}/>, label: "Core Operations", val: "OEM/ODM Specialist Factory" },
+              { icon: <Package size={28}/>, label: "Product Portfolio", val: "Suitcases, Backpacks, Totes" },
+              { icon: <CreditCard size={28}/>, label: "Trade Logistics", val: "EXW, FOB, CIF Supported" },
+              { icon: <ShieldCheck size={28}/>, label: "Export Markets", val: "Global Reach (NA, EU, SEA)" },
             ].map((item, idx) => (
-              <div key={idx} className="group p-8 border-[0.5px] border-gray-50 bg-white hover:bg-[var(--surface-tint)] transition-all flex flex-col gap-4">
-                <div className="text-[var(--primary-bright)] opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all transform origin-left">
+              <div key={idx} className="group p-10 border-[0.5px] border-gray-100 bg-white hover:bg-[var(--surface-tint)] transition-all flex flex-col gap-6">
+                <div className="text-[var(--primary-bright)] opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all transform origin-left">
                   {item.icon}
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-black text-[var(--muted)] tracking-widest block mb-1">{item.label}</span>
-                  <span className="text-sm font-bold text-[var(--secondary)] uppercase leading-tight">{item.val}</span>
+                  <span className="text-[10px] uppercase font-black text-[var(--muted)] tracking-[0.2em] block mb-2">{item.label}</span>
+                  <span className="text-base font-black text-[var(--secondary)] uppercase leading-tight tracking-tight">{item.val}</span>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
-             <button className="bg-[var(--primary-600)] hover:bg-[var(--primary-700)] text-white px-12 py-4 rounded-full font-black uppercase text-xs tracking-widest shadow-xl transition-all hover:-translate-y-1">Contact Supplier</button>
-             <button className="border-2 border-[var(--secondary)] text-[var(--secondary)] px-12 py-4 rounded-full font-black uppercase text-xs tracking-widest hover:bg-[var(--secondary)] hover:text-white transition-all">Start Order</button>
+          <div className="mt-12 flex flex-wrap justify-center gap-8">
+             <a href="mailto:zhao752222897@163.com" className="bg-[var(--primary-600)] hover:bg-[var(--primary-700)] text-white px-14 py-5 rounded-full font-black uppercase text-xs tracking-widest shadow-2xl transition-all hover:-translate-y-1">Send Inquiry Email</a>
+             <button className="border-2 border-[var(--secondary)] text-[var(--secondary)] px-14 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-[var(--secondary)] hover:text-white transition-all">Download Catalog</button>
           </div>
         </div>
       </section>
 
-      {/* Floating Toolbar with WhatsApp */}
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-[80] flex flex-col gap-3">
+      {/* REFINED Floating Toolbar: Mail & WhatsApp Only */}
+      <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[80] flex flex-col gap-4">
         {[
-          { icon: <MessageSquare size={20} />, label: "CHAT", color: "bg-white" },
-          { icon: <PhoneCall size={20} />, label: "INQUIRY", color: "bg-white" },
           { 
-            icon: <WhatsAppIcon />, 
+            icon: <Mail size={24} />, 
+            label: "INQUIRY", 
+            color: "bg-white text-[var(--secondary)] hover:bg-[var(--surface-tint)]",
+            onClick: () => window.location.href = "mailto:zhao752222897@163.com"
+          },
+          { 
+            icon: <WhatsAppIcon size={24} />, 
             label: "WHATSAPP", 
-            color: "bg-[#25D366] text-white hover:bg-[#128C7E]",
+            color: "bg-[#25D366] text-white hover:bg-[#128C7E] shadow-green-500/20",
             onClick: () => setShowQR(true)
           },
         ].map((btn, i) => (
           <div 
             key={i} 
             onClick={btn.onClick}
-            className={`w-[70px] h-[70px] ${btn.color || 'bg-white'} shadow-2xl rounded-2xl flex flex-col items-center justify-center cursor-pointer border border-gray-100 group hover:scale-110 transition-all`}
+            className={`w-[80px] h-[80px] ${btn.color} shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-[24px] flex flex-col items-center justify-center cursor-pointer border border-gray-100/50 group hover:scale-110 transition-all`}
           >
-            <div className="mb-1 group-hover:animate-bounce">{btn.icon}</div>
-            <span className="text-[9px] font-black tracking-tighter">{btn.label}</span>
+            <div className="mb-1.5 group-hover:animate-bounce">{btn.icon}</div>
+            <span className="text-[10px] font-black tracking-tighter uppercase">{btn.label}</span>
           </div>
         ))}
       </div>
@@ -90,31 +94,15 @@ export const CompanyProfile = () => {
       {showQR && (
         <div className="qr-modal-overlay" onClick={() => setShowQR(false)}>
           <div className="qr-modal-content text-center" onClick={e => e.stopPropagation()}>
-            <button 
-              onClick={() => setShowQR(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-900 transition-colors"
-            >
-              <X size={24} />
-            </button>
-            <div className="w-16 h-16 bg-[#25D366] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20 text-white">
-              <WhatsAppIcon size={32} />
+            <button onClick={() => setShowQR(false)} className="absolute top-5 right-5 text-gray-400 hover:text-gray-900 transition-colors"><X size={24} /></button>
+            <div className="w-16 h-16 bg-[#25D366] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20 text-white"><WhatsAppIcon size={32} /></div>
+            <h3 className="text-xl font-black text-[var(--secondary)] mb-2 uppercase tracking-tight">Direct WhatsApp</h3>
+            <p className="text-xs text-gray-500 mb-8 font-medium px-4">Scan to start a priority conversation with our manufacturing team.</p>
+            <div className="aspect-square bg-white border border-gray-100 rounded-2xl flex items-center justify-center relative group overflow-hidden shadow-inner p-4">
+               <img src="https://sc04.alicdn.com/kf/A8eee21827e8b42db9639a5317c5ecc52k.jpg" alt="WhatsApp QR" className="w-full h-full object-contain" />
+               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </div>
-            <h3 className="text-xl font-black text-[var(--secondary)] mb-2 uppercase tracking-tight">Contact via WhatsApp</h3>
-            <p className="text-xs text-gray-500 mb-8 font-medium px-4">Scan the QR code below to start a direct conversation with our export team.</p>
-            
-            {/* REAL WHATSAPP QR CODE */}
-            <div className="aspect-square bg-white border border-gray-100 rounded-2xl flex items-center justify-center relative group overflow-hidden shadow-inner">
-               <img 
-                 src="https://sc04.alicdn.com/kf/A8eee21827e8b42db9639a5317c5ecc52k.jpg" 
-                 alt="WhatsApp QR" 
-                 className="w-full h-full object-contain p-4"
-               />
-               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </div>
-            
-            <div className="mt-8 pt-6 border-t border-gray-100">
-               <span className="text-[10px] font-black text-[var(--primary-bright)] uppercase tracking-widest">Available 24/7</span>
-            </div>
+            <div className="mt-8 pt-6 border-t border-gray-100"><span className="text-[10px] font-black text-[var(--primary-bright)] uppercase tracking-[0.2em]">Available 24/7 Global Support</span></div>
           </div>
         </div>
       )}
@@ -145,7 +133,7 @@ export const Footer = () => (
           </div>
         ))}
       </div>
-      <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
         <p className="text-white/20 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Shanxi Ruima Trading Co., Ltd. All Rights Reserved.</p>
         <div className="flex gap-8">
           {["Privacy Policy", "Terms of Service", "Legal"].map(t => (
