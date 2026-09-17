@@ -57,8 +57,12 @@ export const CompanyProfile = () => {
           </div>
 
           <div className="mt-12 flex flex-wrap justify-center gap-8">
-             <a href="mailto:zhao752222897@163.com" className="bg-[var(--primary-600)] hover:bg-[var(--primary-700)] text-white px-14 py-5 rounded-full font-black uppercase text-xs tracking-widest shadow-2xl transition-all hover:-translate-y-1">Send Inquiry Email</a>
-             <button className="border-2 border-[var(--secondary)] text-[var(--secondary)] px-14 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-[var(--secondary)] hover:text-white transition-all">Download Catalog</button>
+             <button 
+               onClick={() => setShowQR(true)}
+               className="bg-[var(--primary-600)] hover:bg-[var(--primary-700)] text-white px-16 py-5 rounded-full font-black uppercase text-xs tracking-[0.2em] shadow-2xl transition-all hover:-translate-y-1 active:scale-95"
+             >
+               Contact Us
+             </button>
           </div>
         </div>
       </section>
