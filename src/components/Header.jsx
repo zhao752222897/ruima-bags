@@ -8,7 +8,7 @@ export const StoreHeader = () => (
       <img 
         src="https://sc02.alicdn.com/kf/H249babd85e0341a7b2be8ab4ccded49eO.jpg" 
         className="w-full h-full object-cover object-center" 
-        alt="Ruima Bags Correct Banner" 
+        alt="Shanxi Ruima Bags Banner" 
       />
       
       {/* Top Identity Bar (Floating on top) */}

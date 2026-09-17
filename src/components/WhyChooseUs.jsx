@@ -119,8 +119,8 @@ export const Footer = () => (
     <div className="w-[1200px] mx-auto px-8">
       <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
         <div className="col-span-2">
-           <h4 className="text-white text-2xl font-black tracking-tighter mb-6">RUIMA <span className="text-[var(--primary-bright)]">BAGS</span></h4>
-           <p className="text-white/40 text-sm leading-relaxed max-w-xs font-light">Leading global manufacturer of luggage and bags since 2013. Excellence in quality, reliability, and worldwide delivery.</p>
+           <h4 className="text-white text-2xl font-black tracking-tighter mb-6">SHANXI RUIMA <span className="text-[var(--primary-bright)]">BAGS</span></h4>
+           <p className="text-white/40 text-sm leading-relaxed max-w-xs font-light italic">Leading global manufacturer of luggage and bags since 2013. Excellence in quality, reliability, and worldwide delivery.</p>
         </div>
         {[
           { title: "Products", links: ["Hard Luggage", "Soft Luggage", "School Bags", "Casual Bags"] },
@@ -138,7 +138,13 @@ export const Footer = () => (
         ))}
       </div>
       <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-        <p className="text-white/20 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Shanxi Ruima Trading Co., Ltd. All Rights Reserved.</p>
+        <div className="flex flex-col gap-2">
+          <p className="text-white/20 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Shanxi Ruima Trading Co., Ltd. All Rights Reserved.</p>
+          <p className="text-white/10 text-[8px] font-medium leading-relaxed max-w-xl">
+            SHANXI RUIMA is an independent brand owned and operated by Shanxi Ruima Trading Co., Ltd. 
+            We are not affiliated with, endorsed by, or associated with any other brands using similar phonetic names.
+          </p>
+        </div>
         <div className="flex gap-8">
           {["Privacy Policy", "Terms of Service", "Legal"].map(t => (
             <span key={t} className="text-white/20 text-[10px] font-bold uppercase tracking-widest hover:text-white cursor-pointer transition-colors">{t}</span>
