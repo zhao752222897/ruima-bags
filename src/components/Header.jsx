@@ -29,7 +29,7 @@ export const StoreHeader = () => (
           <div className="nav-item-block group relative uppercase text-xs font-bold tracking-widest px-8">
             Products <ChevronDown size={12} className="ml-2" />
             <div className="hidden group-hover:block absolute top-[48px] left-0 w-[240px] bg-white shadow-xl z-50 text-[var(--body)] py-2 border-t-2 border-[var(--primary)]">
-              {['Hard & Soft Luggage', 'Student Backpacks', 'Casual & Crossbody Bags', 'Sports & Gym Bags', 'Shoulder Bags', 'Pet Bags'].map(cat => (
+              {['hard case', 'Soft case', 'Shoulder Bag', 'crossbody bag', 'Luggage bag fitness bag', 'School bag'].map(cat => (
                 <div key={cat} className="h-10 flex items-center px-4 hover:bg-[#F5F5F5] text-sm cursor-pointer capitalize">{cat}</div>
               ))}
             </div>
