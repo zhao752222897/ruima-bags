@@ -1,5 +1,6 @@
 import React from 'react';
-import { Search, ChevronDown, Globe, Verified, Star, Clock, MapPin, Award, CheckCircle2, MessageSquare, PhoneCall, ChevronRight } from 'lucide-react';
+import { Search, ChevronDown, Globe, Verified } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const StoreHeader = () => (
   <header className="w-full flex flex-col items-center">
@@ -25,17 +26,21 @@ export const StoreHeader = () => (
     <nav className="w-full bg-[var(--primary-bright)] h-[48px] flex justify-center shadow-lg border-b border-white/10 z-30">
       <div className="w-[1200px] h-full flex items-center justify-between px-4">
         <div className="flex h-full">
-          <div className="nav-item-block nav-item-selected uppercase text-xs font-black tracking-widest px-8">Home</div>
+          <Link to="/" className="nav-item-block nav-item-selected uppercase text-xs font-black tracking-widest px-8">Home</Link>
           <div className="nav-item-block group relative uppercase text-xs font-bold tracking-widest px-8">
             Products <ChevronDown size={12} className="ml-2" />
-            <div className="hidden group-hover:block absolute top-[48px] left-0 w-[240px] bg-white shadow-xl z-50 text-[var(--body)] py-2 border-t-2 border-[var(--primary)]">
-              {['hard case', 'Soft case', 'Shoulder Bag', 'crossbody bag', 'Luggage bag fitness bag', 'School bag'].map(cat => (
-                <div key={cat} className="h-10 flex items-center px-4 hover:bg-[#F5F5F5] text-sm cursor-pointer capitalize">{cat}</div>
-              ))}
+            <div className="hidden group-hover:block absolute top-[48px] left-0 w-[260px] bg-white shadow-xl z-50 text-[var(--body)] py-2 border-t-2 border-[var(--primary)]">
+              {[
+                ['All products', '/products'],
+                ['Luggage', '/luggage'],
+                ['Backpacks', '/backpacks'],
+                ['Crossbody bags', '/crossbody-bags'],
+                ['OEM / ODM', '/oem-odm']
+              ].map(([label, path]) => <Link key={path} to={path} className="h-10 flex items-center px-4 hover:bg-[#F5F5F5] text-sm cursor-pointer">{label}</Link>)}
             </div>
           </div>
-          <div className="nav-item-block uppercase text-xs font-bold tracking-widest px-8 opacity-80 hover:opacity-100 transition-opacity">Company Profile</div>
-          <div className="nav-item-block uppercase text-xs font-bold tracking-widest px-8 opacity-80 hover:opacity-100 transition-opacity">Contact Us</div>
+          <Link to="/company-profile" className="nav-item-block uppercase text-xs font-bold tracking-widest px-8 opacity-80 hover:opacity-100 transition-opacity">Company Profile</Link>
+          <Link to="/contact-us" className="nav-item-block uppercase text-xs font-bold tracking-widest px-8 opacity-80 hover:opacity-100 transition-opacity">Contact Us</Link>
         </div>
 
         {/* Search Bar */}

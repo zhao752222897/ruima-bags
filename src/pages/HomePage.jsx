@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Hero } from '../components/Hero';
 import { LanguageStrip } from '../components/LanguageStrip';
 import { CustomizationService } from '../components/CustomizationService';
 import { ProductionProcess } from '../components/ProductionProcess';
 import { FactoryTour, CategorySection } from '../components/ProductSection';
 import { CompanyProfile } from '../components/WhyChooseUs';
+import { usePageSeo } from '../lib/seo';
 
 // ORIGINAL DATA SYNCED BACK FROM GITHUB (Only used for Index Home Page)
 const luggageProducts = [
@@ -40,13 +42,46 @@ const casualProducts = [
   { title: "Japanese Style Plaid Sling Bag Kawaii Crossbody Messenger", price: "12.50", moq: 50, image: "https://s.alicdn.com/@sc04/kf/Hd343b570c24a4eb794201416f632878d4/-.jpg", material: "Vintage Plaid Cotton Canvas", specs: "Kawaii Accessory Integration", colors: "Primary Yellow, Classic Blue" }
 ];
 
-export const HomePage = () => (
+export const HomePage = () => {
+  usePageSeo({
+    title: 'OEM Bag Manufacturer | Custom Luggage, Backpacks and Crossbody Bags',
+    description: 'Shanxi Ruima is an OEM and ODM bag manufacturer in Shanxi, China, supplying custom luggage, student backpacks and casual bags for global brands and wholesalers.',
+    path: '/'
+  });
+
+  return (
   <main className="flex flex-col">
     <Hero />
     <LanguageStrip />
     <FactoryTour />
     <CustomizationService />
     <ProductionProcess />
+    <section data-component="company-introduction" className="full-bleed-band bg-white py-20">
+      <div className="mx-auto grid w-[1200px] max-w-full gap-10 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
+        <div>
+          <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-[var(--primary-bright)]">Shanxi Ruima Trading Co., Ltd.</p>
+          <h2 className="mb-6 text-4xl font-black uppercase leading-tight tracking-tight text-[var(--secondary)]">OEM and ODM bag manufacturing from Shanxi, China</h2>
+          <p className="max-w-3xl text-base leading-8 text-gray-600">SHANXI RUIMA is a factory-direct manufacturer and export partner for luggage, student backpacks, laptop bags, crossbody bags and casual bags. We support product development, sample review, logo customization, production, quality control and export packing for global brands and wholesalers.</p>
+          <div className="mt-7 flex flex-wrap gap-3 text-xs font-bold text-[var(--secondary)]">
+            {['Luggage', 'Backpacks', 'Crossbody bags', 'OEM / ODM', 'EXW · FOB · CIF'].map(item => <span key={item} className="rounded-full border border-gray-200 bg-[#F8F9FB] px-4 py-2">{item}</span>)}
+          </div>
+          <div className="mt-8 flex flex-wrap gap-5 text-sm font-black uppercase tracking-widest">
+            <Link to="/company-profile" className="text-[var(--secondary)] underline decoration-[var(--primary-bright)] decoration-2 underline-offset-4">Company profile</Link>
+            <Link to="/oem-odm" className="text-[var(--secondary)] underline decoration-[var(--primary-bright)] decoration-2 underline-offset-4">OEM / ODM services</Link>
+          </div>
+        </div>
+        <div className="rounded-[28px] bg-[var(--secondary)] p-8 text-white">
+          <h3 className="mb-6 text-xl font-black uppercase tracking-tight">Buyer information</h3>
+          <div className="space-y-5 text-sm leading-6 text-white/70">
+            <p><strong className="text-white">MOQ:</strong> Product-level MOQ and reference pricing are shown in the catalog where available.</p>
+            <p><strong className="text-white">Samples:</strong> Sample requirements and customization scope are confirmed case by case before production.</p>
+            <p><strong className="text-white">Lead time:</strong> Confirm the production schedule after product, quantity and sample requirements are agreed.</p>
+            <p><strong className="text-white">Markets:</strong> Serving buyers across North America, Europe and Southeast Asia.</p>
+          </div>
+          <Link to="/contact-us" className="mt-8 inline-flex items-center rounded-full bg-[var(--primary-bright)] px-5 py-3 text-[10px] font-black uppercase tracking-widest text-white">Discuss your requirement</Link>
+        </div>
+      </div>
+    </section>
     <div className="flex flex-col gap-[20px] mt-[20px]">
       <CategorySection title="Hard case luggage" products={luggageProducts} />
       <CategorySection title="Backpack series" products={backpackProducts} />
@@ -54,4 +89,5 @@ export const HomePage = () => (
       <CompanyProfile />
     </div>
   </main>
-);
+  );
+};

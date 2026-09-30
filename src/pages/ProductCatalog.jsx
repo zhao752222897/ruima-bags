@@ -1,5 +1,7 @@
 ﻿import React, { useEffect, useMemo, useState } from 'react';
-import { Search, ChevronRight, Filter, CheckCircle2 } from 'lucide-react';
+import { Search, ChevronRight, Filter, CheckCircle2, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { usePageSeo } from '../lib/seo';
 
 const CATEGORIES = ["ALL", "hard case", "Soft box", "shoulder bag", "Sling Bag", "Luggage bag, fitness bag", "Schoolbag"];
 
@@ -16,8 +18,24 @@ const formatPrice = (value) => {
   return match ? match[0] : 'Contact';
 };
 
+const shuffleProducts = (items) => {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+  return shuffled;
+};
+
 const ProductCatalog = () => {
+  usePageSeo({
+    title: 'Product Catalog | Custom Luggage, Backpacks and Bags | SHANXI RUIMA',
+    description: 'Browse Shanxi Ruima factory-direct luggage, backpacks, school bags and crossbody bags with product-level MOQ, reference pricing and customization information.',
+    path: '/products'
+  });
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
+  const [allProductsOrder, setAllProductsOrder] = useState([]);
   const [activeCat, setActiveCat] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -27,19 +45,23 @@ const ProductCatalog = () => {
         if (!response.ok) throw new Error(`products.json returned ${response.status}`);
         return response.json();
       })
-      .then(setProducts)
+      .then(data => {
+        setProducts(data);
+        setAllProductsOrder(shuffleProducts(data));
+      })
       .catch(error => console.error('Unable to load product details:', error));
   }, []);
 
   const filteredProducts = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
-    return products.filter(product => {
+    const sourceProducts = activeCat === 'ALL' ? allProductsOrder : products;
+    return sourceProducts.filter(product => {
       const title = formatTitle(product.title);
       const matchCat = activeCat === "ALL" || product.category === activeCat;
       const matchSearch = !query || `${title} ${product.colors}`.toLowerCase().includes(query);
       return matchCat && matchSearch;
     });
-  }, [products, activeCat, searchQuery]);
+  }, [products, allProductsOrder, activeCat, searchQuery]);
 
   return (
     <div className="min-h-screen bg-[#F8F9FB]">
@@ -138,7 +160,12 @@ const ProductCatalog = () => {
                     <div className="mb-4 whitespace-nowrap text-3xl font-black leading-none tracking-tight text-[var(--secondary)]">{formatPrice(p.price) === 'Contact' ? 'Contact' : `$${formatPrice(p.price)}`}</div>
                     <span className="inline-flex whitespace-nowrap rounded-full border border-gray-100 bg-white px-4 py-2 text-[9px] font-black uppercase tracking-[0.08em] text-[var(--primary-bright)] shadow-sm">MOQ: {p.moq} PCS</span>
                   </div>
-                  <button className="mt-5 w-full rounded-full bg-[var(--secondary)] px-3 py-3.5 text-[8px] font-black uppercase tracking-[0.18em] text-white shadow-md transition-colors hover:bg-[var(--primary-bright)]">Start Catalog Order</button>
+                  <button
+                    onClick={() => navigate(`/products/${encodeURIComponent(p.id)}`)}
+                    className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[var(--secondary)] px-3 py-3.5 text-[8px] font-black uppercase tracking-[0.18em] text-white shadow-md transition-colors hover:bg-[var(--primary-bright)]"
+                  >
+                    View product details <ExternalLink size={13} />
+                  </button>
                 </div>
               </article>
             ))}

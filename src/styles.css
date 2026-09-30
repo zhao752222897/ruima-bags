@@ -69,6 +69,37 @@
     @apply bg-white rounded-3xl p-8 shadow-2xl relative max-w-xs w-full mx-4;
     animation: modal-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
+
+  .floating-contact-button {
+    @apply flex h-[80px] w-[80px] flex-col items-center justify-center rounded-[24px] border border-gray-100/50 text-[10px] font-black tracking-tighter shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-300;
+  }
+
+  .floating-contact-button:hover {
+    transform: scale(1.08) translateX(-3px);
+  }
+
+  .floating-contact-button span {
+    @apply mt-1.5;
+  }
+
+  .floating-contact-inquiry {
+    @apply bg-white text-[var(--secondary)];
+  }
+
+  .floating-contact-whatsapp {
+    @apply bg-[#25D366] text-white shadow-green-500/20;
+  }
+
+  @media (max-width: 640px) {
+    .floating-contact-button {
+      @apply h-[66px] w-[66px] rounded-[20px] text-[8px];
+    }
+
+    .floating-contact-button svg {
+      width: 23px;
+      height: 23px;
+    }
+  }
   /* ---------- Production Process Accordion (Naikeway Style) ---------- */
   .process-accordion-item {
     @apply h-[600px] relative overflow-hidden transition-all duration-700 ease-in-out cursor-pointer;

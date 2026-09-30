@@ -6,6 +6,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   <url>
     <loc>https://ruima-bags.pages.dev/products</loc>
   </url>
+  <url><loc>https://ruima-bags.pages.dev/luggage</loc></url>
+  <url><loc>https://ruima-bags.pages.dev/backpacks</loc></url>
+  <url><loc>https://ruima-bags.pages.dev/crossbody-bags</loc></url>
+  <url><loc>https://ruima-bags.pages.dev/oem-odm</loc></url>
+  <url><loc>https://ruima-bags.pages.dev/company-profile</loc></url>
+  <url><loc>https://ruima-bags.pages.dev/contact-us</loc></url>
 </urlset>
 `;
 

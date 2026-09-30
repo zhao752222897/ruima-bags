@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Globe, Clock, Package, CreditCard, PieChart, ShieldCheck, Mail, X } from 'lucide-react';
+import React from 'react';
+import { Globe, Clock, Package, CreditCard, PieChart, ShieldCheck } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const WhatsAppIcon = ({ size = 20, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -8,7 +9,7 @@ const WhatsAppIcon = ({ size = 20, className = "" }) => (
 );
 
 export const CompanyProfile = () => {
-  const [showQR, setShowQR] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -58,8 +59,9 @@ export const CompanyProfile = () => {
 
           <div className="mt-12 flex flex-wrap justify-center gap-8">
              <button 
-               onClick={() => setShowQR(true)}
-               className="bg-[var(--primary-600)] hover:bg-[var(--primary-700)] text-white px-16 py-5 rounded-full font-black uppercase text-xs tracking-[0.2em] shadow-2xl transition-all hover:-translate-y-1 active:scale-95"
+               onClick={() => navigate('/contact-us')}
+                className="bg-[var(--primary-600)] hover:bg-[var(--primary-700)] text-white px-16 py-5 rounded-full font-black uppercase text-xs tracking-[0.2em] shadow-2xl transition-all hover:-translate-y-1 active:scale-95"
+
              >
                Contact Us
              </button>
@@ -67,49 +69,7 @@ export const CompanyProfile = () => {
         </div>
       </section>
 
-      {/* REFINED Floating Toolbar: Mail & WhatsApp Only */}
-      <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[80] flex flex-col gap-4">
-        {[
-          { 
-            icon: <Mail size={24} />, 
-            label: "INQUIRY", 
-            color: "bg-white text-[var(--secondary)] hover:bg-[var(--surface-tint)]",
-            onClick: () => {}
-          },
-          { 
-            icon: <WhatsAppIcon size={24} />, 
-            label: "WHATSAPP", 
-            color: "bg-[#25D366] text-white hover:bg-[#128C7E] shadow-green-500/20",
-            onClick: () => setShowQR(true)
-          },
-        ].map((btn, i) => (
-          <div 
-            key={i} 
-            onClick={btn.onClick}
-            className={`w-[80px] h-[80px] ${btn.color} shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-[24px] flex flex-col items-center justify-center cursor-pointer border border-gray-100/50 group hover:scale-110 transition-all`}
-          >
-            <div className="mb-1.5 group-hover:animate-bounce">{btn.icon}</div>
-            <span className="text-[10px] font-black tracking-tighter uppercase">{btn.label}</span>
-          </div>
-        ))}
-      </div>
 
-      {/* WhatsApp QR Modal */}
-      {showQR && (
-        <div className="qr-modal-overlay" onClick={() => setShowQR(false)}>
-          <div className="qr-modal-content text-center" onClick={e => e.stopPropagation()}>
-            <button onClick={() => setShowQR(false)} className="absolute top-5 right-5 text-gray-400 hover:text-gray-900 transition-colors"><X size={24} /></button>
-            <div className="w-16 h-16 bg-[#25D366] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20 text-white"><WhatsAppIcon size={32} /></div>
-            <h3 className="text-xl font-black text-[var(--secondary)] mb-2 uppercase tracking-tight">Direct WhatsApp</h3>
-            <p className="text-xs text-gray-500 mb-8 font-medium px-4">Scan to start a priority conversation with our manufacturing team.</p>
-            <div className="aspect-square bg-white border border-gray-100 rounded-2xl flex items-center justify-center relative group overflow-hidden shadow-inner p-4">
-               <img src="https://sc04.alicdn.com/kf/A8eee21827e8b42db9639a5317c5ecc52k.jpg" alt="WhatsApp QR" className="w-full h-full object-contain" />
-               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </div>
-            <div className="mt-8 pt-6 border-t border-gray-100"><span className="text-[10px] font-black text-[var(--primary-bright)] uppercase tracking-[0.2em]">Available 24/7 Global Support</span></div>
-          </div>
-        </div>
-      )}
     </>
   );
 };
@@ -123,15 +83,16 @@ export const Footer = () => (
            <p className="text-white/40 text-sm leading-relaxed max-w-xs font-light italic">Leading global manufacturer of luggage and bags since 2013. Excellence in quality, reliability, and worldwide delivery.</p>
         </div>
         {[
-          { title: "Products", links: ["Hard Luggage", "Soft Luggage", "School Bags", "Casual Bags"] },
-          { title: "Company", links: ["About Us", "Certificates", "Factory Tour", "Contact"] },
-          { title: "Support", links: ["Help Center", "Trade Assurance", "Shipping Info", "Payment"] }
+          { title: "Products", links: [["Hard Luggage", "/luggage"], ["Backpacks", "/backpacks"], ["Crossbody Bags", "/crossbody-bags"], ["All Products", "/products"]] },
+           { title: "Company", links: [["About Us", "/company-profile"], ["OEM / ODM", "/oem-odm"], ["Factory Tour", "/company-profile"], ["Contact", "/contact-us"]] },
+           { title: "Support", links: [["Product Details", "/products"], ["MOQ & Pricing", "/products"], ["Shipping Info", "/company-profile"], ["Inquiry", "/contact-us"]] }
+
         ].map(group => (
           <div key={group.title}>
             <h5 className="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6">{group.title}</h5>
             <ul className="space-y-4">
-              {group.links.map(link => (
-                <li key={link} className="text-white/40 text-xs hover:text-[var(--primary-bright)] cursor-pointer transition-colors font-medium uppercase tracking-wide">{link}</li>
+              {group.links.map(([label, path]) => (
+                <li key={path + label}><Link to={path} className="text-white/40 text-xs hover:text-[var(--primary-bright)] transition-colors font-medium uppercase tracking-wide">{label}</Link></li>
               ))}
             </ul>
           </div>
